@@ -19,11 +19,13 @@ class Controller(QMainWindow, Ui_MainWindow):
         self.button_intro.clicked.connect(lambda: self.begin_bttn())
         self.list_moods.itemDoubleClicked.connect(self.get_item)
         self.button_next.clicked.connect(lambda: self.next_bttn())
+        self.button_next_2.clicked.connect(lambda: self.next_bttn2())
 
         self.list_moods.hide()
         self.label_question.hide()
         self.label_rec.hide()
         self.button_next.hide()
+        self.button_next_2.hide()
 
     def begin_bttn(self):
         happy, sad, anger, calm = 'Happiness', 'Sadness', 'Anger', 'Calm'
@@ -66,4 +68,11 @@ class Controller(QMainWindow, Ui_MainWindow):
         self.label_rec.setText('Songs have a great impact on us! Based on'
                                ' how we feel, songs can amplify those emotions')
         self.button_next.hide()
-
+        self.button_next_2.show()
+    def next_bttn2(self):
+        self.label_question.clear()
+        self.label_question.setText('Ways to Improve our Emotion!')
+        self.label_rec.clear()
+        self.label_rec.setText('Apart from listening to our favorite artists we can take:\n* Walks\n'
+                               '* Exercise\n* Pick up a hobby\n* Even read!\nAppreciate the little moments and take a break!')
+        self.button_next_2.hide()
